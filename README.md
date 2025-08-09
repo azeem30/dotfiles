@@ -1,6 +1,4 @@
-# **`shub39's` Hyprland Dotfiles**
-
-My config files for hyprland and other utilities with some shell scripts that I have been daily driving for about 7 months now. **Heavily customised for my workflow and only meant to be a reference**
+# **`azeem30's` Hyprland Dotfiles**
 
 > ![](https://ziadoua.github.io/m3-Markdown-Badges/badges/Arch/arch1.svg)
 > ![](https://ziadoua.github.io/m3-Markdown-Badges/badges/CSS/css1.svg)
@@ -43,7 +41,7 @@ it.mijorus.smile
 - Clone this repo at `.config/` in your home directory
 
 ```bash
-git clone https://github.com/shub39/dotfiles
+git clone https://github.com/azeem30/dotfiles
 ```
 
 - Edit `~/.config/hypr/hyprland.conf` to only include `source = ~/.config/dotfiles/hyprland/hyprland.conf`
@@ -52,12 +50,3 @@ echo 'source = ~/.config/dotfiles/hyprland/hyprland.conf' > ~/.config/hypr/hyprl
 ```
 
 - Reboot
-
-## Extras
-
-- [NvChad](https://nvchad.com/) a preconfigured neovim setup
-- [Zsh config](https://github.com/pixegami/terminal-profile) for this setup, **edit the scripts according to your package manager first**
-
-## Star History
-
-[![Stargazers over time](https://starchart.cc/shub39/dotfiles.svg?background=%23282828&axis=%23f2dfd3&line=%23ffb780)](https://starchart.cc/shub39/dotfiles)
