@@ -1,34 +1,79 @@
 {
-"include": "~/.config/dotfiles/waybar/modules",
-"layer": "top",
-"exclusive": true,
-"passthrough": false,
-"position": "top",
-"spacing": 3,
-"fixed-center": true,
-"ipc": true,
-"margin-top": 0,
-"margin-left": 0,
-"margin-right": 0,
-"margin-bottom": 0,
-
-"modules-left": [
-  "hyprland/workspaces",
-  "clock",
-	"custom/cava",
-  "mpris"
-	],
-
-"modules-center": [
-	"hyprland/window"
-	], 
-
-"modules-right": [
-	"wlr/taskbar",
-	"cpu", 
-	"temperature", 
-	"memory",
-	"custom/swaync",
-	"pulseaudio"
-	]
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "memory", "pulseaudio", "network", "battery", "tray"],
+    "hyprland/workspaces": {
+        "format": "{icon} {name}",
+        "format-icons": {
+            "active": "●",
+            "occupied": "○",
+            "default": "·"
+        },
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        },
+        "on-click": "activate"
+    },
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M}",
+        "tooltip-format": "{:%A, %B %d, %Y | %H:%M:%S}",
+        "tooltip": true
+    },
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "states": {
+            "critical": 90
+        },
+        "tooltip": true,
+        "tooltip-format": "CPU: {usage}% | Avg Load: {avg_frequency} GHz"
+    },
+    "memory": {
+        "format": "RAM: {used:0.1f}G/{total:0.1f}G",
+        "states": {
+            "critical": 90
+        },
+        "tooltip": true,
+        "tooltip-format": "RAM: {used:0.1f}G/{total:0.1f}G ({percentage}%)"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "Muted",
+        "format-icons": {
+            "default": ["🔈", "🔉", "🔊"]
+        },
+        "states": {
+            "low": 30,
+            "medium": 70,
+            "high": 100
+        }
+    },
+    "network": {
+        "format-wifi": "Wi-Fi: {essid} ({signalStrength}%)",
+        "format-ethernet": "Ethernet: Connected",
+        "format-disconnected": "Network: Disconnected",
+        "tooltip-format-wifi": "Wi-Fi: {essid} | Signal: {signalStrength}% | IP: {ipaddr}",
+        "tooltip-format-ethernet": "Ethernet: {ipaddr}",
+        "tooltip": true
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ⚡️",
+        "format-icons": ["🪫", "🔋", "🔋", "🔋", "🔋"],
+        "states": {
+            "critical": 15,
+            "low": 30,
+            "medium": 60,
+            "high": 90
+        }
+    },
+    "tray": {
+        "spacing": 10
+    }
 }

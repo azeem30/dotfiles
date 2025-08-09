@@ -1,40 +1,41 @@
 * {
-  font-family: "JetBrainsMonoNerdFontMono";
-  font-weight: bold;
-  min-height: 0;
-  font-size: 102%;
-  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-  padding: 1px;
+    font-family: "JetBrainsMonoNerdFontMono";
+    font-weight: bold;
+    min-height: 0;
+    font-size: 102%;
+    font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+    padding: 1px;
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0);
-  transition-property: background-color;
-  transition-duration: 0.5s;
+    background-color: rgba(0, 0, 0, 0);
+    transition-property: background-color;
+    transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
-  opacity: 0.5;
+    opacity: 0.5;
 }
 
 window#waybar.empty {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 window#waybar.empty #window {
-  padding: 0px;
-  border: 0px;
-  background-color: transparent;
+    padding: 0px;
+    border: 0px;
+    background-color: transparent;
 }
 
 tooltip {
-  opacity: 1;
-  border-radius: 0px; /* Removed rounded corners */
+    opacity: 1;
+    border-radius: 0px;
+    background-color: #282828;
 }
 
 tooltip label {
-  padding: 10px;
-  color: #ebdbb2;
+    padding: 10px;
+    color: #ebdbb2;
 }
 
 #custom-cava,
@@ -47,35 +48,94 @@ tooltip label {
 #temperature,
 #workspaces,
 #custom-menu,
-#custom-swaync {
-  border-radius: 0px; /* Removed rounded corners */
-  color: #ebdbb2;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
+#custom-swaync,
+#battery,
+#tray {
+    border-radius: 0px;
+    color: #ebdbb2;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 #window {
-  color: #ebdbb2;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-right: 6px;
-  padding-left: 6px;
-  border-radius: 0px; /* Removed rounded corners */
+    color: #ebdbb2;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 6px;
+    padding-left: 6px;
+    border-radius: 0px;
 }
 
 #workspaces button {
-  margin: 1px;
-  box-shadow: none;
-  text-shadow: none;
-  border-radius: 0px; /* Removed rounded corners */
-  padding-left: 6px;
-  padding-right: 6px;
-  background-color: #ebdbb2;
-  color: #282828;
+    margin: 1px;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: #ebdbb2;
+    color: #282828;
+}
+
+#workspaces button.active {
+    background-color: #d79921;
+    color: #282828;
+}
+
+#workspaces button.occupied {
+    background-color: #b57614;
+    color: #282828;
+}
+
+#cpu.critical {
+    background-color: #fb4934;
+    color: #ebdbb2;
+}
+
+#memory.critical {
+    background-color: #fb4934;
+    color: #ebdbb2;
+}
+
+#pulseaudio.low,
+#pulseaudio.medium,
+#pulseaudio.high {
+    color: #ebdbb2;
+}
+
+#pulseaudio.muted {
+    color: #fb4934;
+}
+
+#battery.critical,
+#battery.low,
+#battery.medium,
+#battery.high {
+    color: #ebdbb2;
+}
+
+#battery.charging {
+    color: #b8bb26;
+}
+
+#battery.critical {
+    background-color: #fb4934;
 }
 
 #temperature.critical {
-  background-color: red;
+    background-color: #fb4934;
+}
+
+#network.disconnected {
+    color: #fb4934;
+}
+
+#tray>.passive {
+    color: #928374;
+}
+
+#tray>.active {
+    color: #ebdbb2;
 }
